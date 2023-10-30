@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-  color: ${(props) =>
-    props.isRed
-      ? 'red'
-      : 'blue'}; // se a propriedade isRed for true retorna a cor red, se não, a cor azul
-
+  font-weight: 700;
+  background: green;
   small {
-    font-size: 50px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    font-size: 13px;
   }
 `;
 
-export const Button = styled.button`
-  background-color: green;
-  color: black;
-  width: 70px;
-  height: 50px;
+export const Paragraph = styled.h1`
+  font-size: 50px;
 `;
