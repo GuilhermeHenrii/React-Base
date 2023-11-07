@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 // estilo global da aplicação
-import { primaryColor, primaryDarkColor } from '../config/colors';
+import * as colors from '../config/colors';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   *{
@@ -12,8 +13,8 @@ export default createGlobalStyle`
 
   body {
     font-family: sans-serif;
-    background: ${primaryDarkColor};
-    color: ${primaryDarkColor};
+    background: ${colors.primaryDarkColor};
+    color: ${colors.primaryDarkColor};
   }
 
   html, body, #root {
@@ -21,7 +22,7 @@ export default createGlobalStyle`
   }
 
   button {
-    background-color: ${primaryColor};
+    background-color: ${colors.primaryColor};
     border: none;
     cursor: pointer;
     color: #fff;
@@ -32,11 +33,25 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${primaryColor};
+    color: ${colors.primaryColor};
   }
 
   ul{
     list-style: none;
+  }
+
+  // alterando a cor de fundo das notificações
+  body .Toastify .Toastify__toast-container .Toastify__toast--success {
+    background: black;
+  }
+
+  body .Toastify .Toastify__toast-container .Toastify__toast--error {
+    background: black;
+  }
+
+  // alterando a acor do botão de fechar a notificação
+  .Toastify__close-button {
+    color: white;
   }
 `;
 
