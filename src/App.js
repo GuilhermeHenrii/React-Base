@@ -1,5 +1,5 @@
 import React from 'react';
-import { /* BrowserRouter */ Router } from 'react-router-dom'; // Chamando broserRouter aqui para ele envolver todos os soutros módulos, para facilitar o uso das rotas em toda a apicação
+import { /* BrowserRouter */ Router } from 'react-router-dom'; // Chamando broserRouter aqui para ele envolver todos os outros módulos, para facilitar o uso das rotas em toda a apicação
 
 // import Login from './pages/login';
 // não precisa chamar explicitamente o index
