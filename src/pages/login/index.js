@@ -25,7 +25,7 @@ export default function Login() {
 
     async function getData() {
       const promisse = await axios.get('/alunos');
-      console.log(promisse);
+      console.log(promisse.data[0]);
     }
 
     getData();

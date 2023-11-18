@@ -4,7 +4,7 @@ import { /* BrowserRouter */ Router } from 'react-router-dom'; // Chamando brose
 // import Login from './pages/login';
 // não precisa chamar explicitamente o index
 
-import { Bounce, ToastContainer } from 'react-toastify'; // importando o Toast e o Slide
+import { Bounce, ToastContainer } from 'react-toastify'; // importando o Toast e o Bounce
 import history from './services/history'; // history com letra minuscula
 import GlobalStyles from './styles/GlobalStyles'; // todos os componentes react começam com letras maiusculas
 import Header from './components/Header';
