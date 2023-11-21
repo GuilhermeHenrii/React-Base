@@ -1,10 +1,17 @@
 import React from 'react';
 import { toast } from 'react-toastify'; // chamando o toast para emitir de fato as nossas notificações
+import { useDispatch } from 'react-redux';
 import { Title, Paragraph } from './styled';
 import { Container } from '../../styles/GlobalStyles';
 import axios from '../../services/axios';
 
 export default function Login() {
+  const dispatch = useDispatch(); // o Hook useDispatch irá ser responsáel por dispachar um action
+
+  function handleOnClick() {
+    dispatch({ type: 'CLICKED_BTN' }); // enviando a action com seu tipo, podendo ser passado seu payload
+  }
+
   toast.success('Mensagem aleatória de teste', {
     // objeto de confguração das notificações
     closeButton: true,
@@ -40,7 +47,9 @@ export default function Login() {
       <Paragraph>
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </Paragraph>
-      <button type="button">Clique aqui</button>
+      <button type="button" onClick={handleOnClick}>
+        Clique aqui
+      </button>
     </Container> // React.Fragment' }
   );
 }
