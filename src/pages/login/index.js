@@ -11,7 +11,8 @@ export default function Login() {
   const dispatch = useDispatch(); // o Hook useDispatch irá ser responsáel por dispachar um action
 
   function handleOnClick() {
-    dispatch(/* { type: 'CLICKED_BTN' } */ exampleActions.clickedBtn()); // enviando a action com seu tipo, podendo ser passado seu payload
+    dispatch(/* { type: 'CLICKED_BTN' } */ exampleActions.clickedBtnRequest()); // chamando a função, que será tratada pelo Saga
+    // enviando a action com seu tipo, podendo ser passado seu payload
   }
 
   toast.success('Mensagem aleatória de teste', {

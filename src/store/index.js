@@ -1,9 +1,12 @@
 // Aqui nesta pasta é onde ficará toda a lógica do nosso store, com os reducers, os types etc
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './modules/rootReducer';
+import rootSaga from './modules/rootSaga';
 
+const sagaMiddleware = createSagaMiddleware(); // Criado o Saga Middleware
 // const initialState = {
 //   // estado inicial
 //   clickedBtn: false,
@@ -22,7 +25,8 @@ import rootReducer from './modules/rootReducer';
 //   }
 // }
 
-export const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // config para rodar o store na extensão do redux no navegador
-);
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware)); // store está recebendo o rootReducer e o Saga Middleware
+
+sagaMiddleware.run(rootSaga);
+
+export default store;
