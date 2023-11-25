@@ -1,6 +1,7 @@
 import storage from 'redux-persist/lib/storage'; // esse storage se incarregar automaticmanete de salvar os dados no localStorage
 import { persistReducer } from 'redux-persist';
 
+// o redux espera que os dados sejam capturados, para depois renderizar o restante da aplicação
 export default (reducers) => {
   // vamos receber os reducers como parametro para executar essa função
   const persistedReducers = persistReducer(
