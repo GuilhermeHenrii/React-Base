@@ -1,10 +1,11 @@
 // Aqui nesta pasta é onde ficará toda a lógica do nosso store, com os reducers, os types etc
-
+import { persistStore } from 'redux-persist';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './modules/rootReducer';
 import rootSaga from './modules/rootSaga';
+import persistedReducers from './modules/reduxPersist';
 
 const sagaMiddleware = createSagaMiddleware(); // Criado o Saga Middleware
 // const initialState = {
@@ -25,8 +26,12 @@ const sagaMiddleware = createSagaMiddleware(); // Criado o Saga Middleware
 //   }
 // }
 
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware)); // store está recebendo o rootReducer e o Saga Middleware
+const store = createStore(
+  persistedReducers(rootReducer), // envolveldo todos os nosso reducers (rootReducers) na função persistedReducers, que estamos retornando de reduxPersist.js
+  applyMiddleware(sagaMiddleware)
+); // store está recebendo o rootReducer e o Saga Middleware
 
 sagaMiddleware.run(rootSaga);
 
+export const persistor = persistStore(store); // retornando, tambem, a função persistStore do redux-persist, e passando todo o nosso store para ela
 export default store;
