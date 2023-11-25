@@ -1,8 +1,6 @@
 // O saga será responsável por fazer uma requisição antes de, de fato, uma ação ser executada
 // Se a requisição for resolvida, executaremos a ação que faz a requisição e altera o estado
 
-// testando o push
-
 import { call, put, all, takeLatest } from 'redux-saga/effects';
 // takeLatest vai pegar o ultimo click no botão, por exemplo
 // all vai permitir colocar mais de uma ação para ser exucutada
