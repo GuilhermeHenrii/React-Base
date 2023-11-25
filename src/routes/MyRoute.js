@@ -18,7 +18,7 @@ export default function MyRoute({ component: Component, isClosed, ...rest }) {
     );
   }
 
-  // desabilitando regra no eslint para habilitar o spread da propriedade rest drntro do componente
+  // desabilitando regra no eslint para habilitar o spread da propriedade rest dentro do componente
 
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <Route {...rest} component={Component} />;
