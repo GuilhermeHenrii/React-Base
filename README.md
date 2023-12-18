@@ -14,7 +14,7 @@ Nesse repositório você vai encontrar a base de uma aplicação react. Sinta-se
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://github.com/GuilhermeHenrii/React-Base.git
 ```
 
 # Autor
